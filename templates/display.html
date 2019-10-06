@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stocker - Predictions Made Based On Your Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clean responsive bootstrap website template">
+  <meta name="author" content="">
+  <!-- styles -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/css/bootstrap.css')}}">
+  <link href="{{url_for('static',filename='assets/css/bootstrap-responsive.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/docs.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/prettyPhoto.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/js/google-code-prettify/prettify.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/prettyPhoto.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/flexslider.css')}}" rel="stylesheet">
+   <link href="{{url_for('static',filename='assets/css/refineslide.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/font-awesome.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/animate.css')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet">
+
+  <link href="{{url_for('static',filename='assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/color/default.css')}}" rel="stylesheet">
+
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="{{url_for('static', filename='assets/ico/icon1.png')}}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{url_for('static', filename='assets/ico/apple-touch-icon-144-precomposed.png')}}">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{url_for('static', filename='assets/ico/apple-touch-icon-114-precomposed.png')}}">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{url_for('static', filename='assets/ico/apple-touch-icon-72-precomposed.png')}}">
+  <link rel="apple-touch-icon-precomposed" href="{{url_for('static', filename='assets/ico/apple-touch-icon-57-precomposed.png')}}">
+
+  <!-- =======================================================
+    Theme Name: Plato
+    Theme URL: https://bootstrapmade.com/plato-responsive-bootstrap-website-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <header>
+    <!-- Navbar
+    ================================================== -->
+    <div class="cbp-af-header">
+        <div class=" cbp-af-inner">
+          <div class="container">
+            <div class="row">
+  
+              <div class="span4">
+                <!-- logo -->
+                <div class="logo">
+                  <img src="{{url_for('static', filename='assets/ico/icon1.png')}}" alt="tocker icon" />
+                  <h1><a href="{{url_for('home')}}">Stocker</a></h1>
+                </div>
+                <!-- end logo -->
+              </div>
+  
+              <div class="span8">
+                <!-- top menu -->
+                <div class="navbar">
+                  <div class="navbar-inner">
+                    <nav>
+                      <ul class="nav topnav">
+                        <li>
+                          <a href="{{url_for('home')}}">Home</a>
+                        </li>
+                        <li>
+                          <a href="{{url_for('form')}}">Getting Started</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <!-- end menu -->
+              </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  <!-- Subhead
+================================================== -->
+  <section id="subintro">
+
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <h3><strong>Analysis</strong></h3>
+        </div>
+        <div class="span8">
+          <ul class="breadcrumb notop">
+            <li><a href="{{url_for('home')}}">Home</a><span class="divider">/</span></li>
+            <li><a href="{{url_for('form')}}">Predict</a><span class="divider">/</span></li>
+            <li class="active">Analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="maincontent">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="span12">
+          <!-- Typography
+        ================================================== -->
+          <section id="typography">
+            <div class="page-header">
+              <h3>Our Prediction on the basis of {{context.time}} 
+              {% if context.time!='1' %}
+                years
+              {% else %}
+                year 
+              {% endif %}of data:</h3>
+            </div>
+            <div>
+              <h2>Plot for predictions</h2><br>
+              <img src="{{url_figure}}">
+              <h3>Trend Analysis, Weekly And Yearly Changes In Prices</h3><br>
+              <img src="{{url_figure3}}">
+              <hr>
+              <h2 id="pred">Prediction Table</h2><br>
+              {{dataframe|safe}}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer
+ ================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="widget">
+            <!-- logo -->
+            <div class="footerlogo">
+              <h6><a href="{{url_for('home')}}">Stocker</a></h6>
+              <!-- <img src="assets/img/logo.png" alt="" /> -->
+            </div>
+            <!-- end logo -->
+            <address>
+				<strong>Plato business company, Inc.</strong><br>
+				 4455 Great building Ave, Suite A10<br>
+				 San Francisco, CA 94107<br>
+				</address>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Browse pages</h5>
+            <ul class="list list-ok">
+              <li><a href="{{url_for('home')}}">Home</a></li>
+              <li><a href="{{url_for('form')}}">Predict Stonks</a></li>
+              <li><a href="#typography">Stonks</a></li>
+              <li><a href="#pred">Prediction Table</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Flickr photostream</h5>
+            <div class="flickr_badge">
+              <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Keep updated</h5>
+            <p>
+              Enter your email to subcribe newsletter
+            </p>
+            <form>
+              <div class="input-append">
+                <input class="span2" id="appendedInputButton" type="text">
+                <button class="btn btn-color" type="submit">Subscribe</button>
+              </div>
+            </form>
+            <ul class="social-network">
+              <li><a href="#"><i class="icon-bg-light icon-facebook icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Twitter"><i class="icon-bg-light icon-twitter icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Linkedin"><i class="icon-bg-light icon-linkedin icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Pinterest"><i class="icon-bg-light icon-pinterest icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Google plus"><i class="icon-bg-light icon-google-plus icon-circled icon-1x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+              &copy; Plato - All right reserved
+            </p>
+          </div>
+          <div class="span6">
+            <div class="pull-right">
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Plato
+                -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/modernizr.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.easing.1.3.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/google-code-prettify/prettify.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/bootstrap.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.prettyPhoto.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/portfolio/jquery.quicksand.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/portfolio/setting.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/hover/jquery-hover-effect.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.flexslider.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/classie.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/cbpAnimatedHeader.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.refineslide.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.ui.totop.js')}}"></script>
+
+  <!-- Template Custom Javascript File -->
+  <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+
+</body>
+
+</html>

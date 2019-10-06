@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stocker - Your Personal Stock Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An efficient stock predicting algorithm">
+  <meta name="author" content="Mihir Lakhani, Ashray, Nidhi Raniyer">
+  <!-- styles -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/css/bootstrap.css')}}">
+  <link href="{{url_for('static',filename='assets/css/bootstrap-responsive.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/docs.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/prettyPhoto.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/js/google-code-prettify/prettify.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/prettyPhoto.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/flexslider.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/refineslide.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/font-awesome.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/animate.css')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet">
+
+  <link href="{{url_for('static',filename='assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/color/default.css')}}" rel="stylesheet">
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="{{url_for('static',filename='assets/ico/icon1.png')}}">
+
+  <!-- =======================================================
+    Theme Name: Plato
+    Theme URL: https://bootstrapmade.com/plato-responsive-bootstrap-website-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <header>
+    
+    <!-- Navbar
+    ================================================== -->
+    <div class="cbp-af-header">
+      <div class=" cbp-af-inner">
+        <div class="container">
+          <div class="row">
+
+            <div class="span4">
+              <!-- logo -->
+              <div class="logo">
+                <img src="{{url_for('static',filename='assets/ico/icon1.png')}}" alt="tocker icon" />
+                <h1><a href="{{url_for('home')}}">Stocker</a></h1>
+              </div>
+              <!-- end logo -->
+            </div>
+
+            <div class="span8">
+              <!-- top menu -->
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <nav>
+                    <ul class="nav topnav">
+                      <li>
+                        <a href="{{url_for('home')}}">Home</a>
+                      </li>
+                      <li class="dropdown active">
+                        <a href="{{url_for('form')}}">Getting Started</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <!-- end menu -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Subhead
+================================================== -->
+  <section id="subintro">
+
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <h3>Let's get <strong>STOCKED</strong></h3>
+        </div>
+        <div class="span8">
+          <ul class="breadcrumb notop">
+            <li><a href="{{url_for('home')}}">Home</a><span class="divider">/</span></li>
+            <li class="active">Predict</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="maincontent">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="well">
+            <div class="centered e_bounce">
+                <i><img src="{{url_for('static' , filename='assets/ico/bull.png')}}" alt="information"/></i><br>
+              <!--<i class="icon-bg-light icon-circled icon-group icon-3x active"></i>-->
+              In a bull market, stocks show a tendency to go up in price over a period of time. Conventionaly, it signifying the market has more buyers than sellers. Bull markets are most common when the economy is growing and unemployment is low.  
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="well">
+            <div class="centered">
+              <!--<i class="icon-bg-light icon-circled icon-rocket icon-3x active"></i>-->
+              <h4>Enter <strong>Company name</strong></h4>
+              <p>
+                <form action="{{url_for('display')}}">
+                
+                  <div class="input-append col-md-6">
+                    <!--<input class="span2" id="appendedInputButton" type="dropdown";>-->
+                    <select name="company">
+                      <option value="ADANIPORTS" >ADANIPORTS</option>
+                      <option value="ASIANPAINTS">ASIANPAINTS</option>
+                      <option value="AXISBANK">AXISBANK</option>
+                      <option value="BAJAJ-AUTO">BAJAJ-AUTO</option>
+                      <option value="BHARTIAIRTL">BHARTIAIRTL</option>
+                      <option value="COALINDIA">COALINDIA</option>
+                      <option value="DRREDDY">DRREDDY</option>
+                      <option value="HDFC">HDFC</option>
+                      <option value="HDFCBANK">HDFCBANK</option>
+                      <option value="HEROMOTOCO">HEROMOTOCO</option>
+                      <option value="HINDUNILVR">HINDUNILVR</option>
+                      <option value="ICICIBANK">ICICIBANK</option>
+                      <option value="INDUSINDBK">INDUSINDBK</option>
+                      <option value="INFY">INFY</option>
+                      <option value="ITC">ITC</option>
+                      <option value="KOTAKBANK">KOTAKBANK</option>
+                      <option value="LT">LT</option>
+                      <option value="M&M">M&M</option>
+                      <option value="MARUTI">MARUTI</option>
+                      <option value="ONGC">ONGC</option>
+                      <option value="RELIANCE">RELIANCE</option>
+                      <option value="SBIN">SBIN</option>
+                      <option value="SUNPHARMA">SUNPHARMA</option>
+                      <option value="TATAMOTORS">TATAMOTORS</option>
+                      <option value="TATAMTRBVR">TATAMTRBVR</option>
+                      <option value="TATASTEEL">TATASTEEL</option>
+                      <option value="TCS">TCS</option>
+                      <option value="WIPRO">WIPRO</option>
+                      <option value="YESBANK">YESBANK</option>
+                      <option value="POWERGRID">POWERGRID</option>
+                    </select>
+                    <!--<button class="btn btn-color" type="submit">Subscribe</button>-->
+                  </div>
+
+              </p><h4>Years to be <strong>Estimated</strong></h4>
+              <p>
+                <div class="input-append col-md-6">
+                  <input class="span2" id="appendedInputButton" type="number" name="time">
+                  <!--<button class="btn btn-color" type="submit">Subscribe</button>-->
+                </div>
+              </p>
+              <p>
+                  <br>
+                  <button type="submit" class="btn btn-color">Analyse</button>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="well">
+            <div class="centered e_bounce">
+              <!--<i class="icon-bg-light icon-circled icon-heart icon-3x active"></i>-->
+              <i><img src="{{url_for('static' , filename='assets/ico/bear.png')}}" alt="information"/></i><br>
+              A bear market represents stocks headed down signifying sellers outnumber buyers. Once stocks drop 20 percent from their peak in value, you may hear speculation that it is a bear market, meaning it could drop a lot further before it comes back up.
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div class="solid_line">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h4>Our services</h4>
+          <!-- start: Accordion -->
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            <i class="icon-minus"></i> Database management</a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                  on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                  raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+            <i class="icon-plus"></i> UI development</a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                  on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                  raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+            <i class="icon-plus"></i> Social media</a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                  on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                  raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Accordion -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer
+ ================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="widget">
+            <!-- logo -->
+            <div class="footerlogo">
+              <h6><a href="{{url_for('home')}}">Stocker</a></h6>
+              <!-- <img src="assets/img/logo.png" alt="" /> -->
+            </div>
+            <!-- end logo -->
+            <address>
+        <strong>Plato business company, Inc.</strong><br>
+         4455 Great building Ave, Suite A10<br>
+         San Francisco, CA 94107<br>
+        </address>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Browse pages</h5>
+            <ul class="list list-ok">
+              <li><a href="{{url_for('home')}}">Home</a></li>
+              <li><a href="#maincontent">Predict Stonks</a></li>
+              <li><a href="#accordion2">Services</a></li>
+              <li><a href="#">Dead Link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Flickr photostream</h5>
+            <div class="flickr_badge">
+              <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Keep updated</h5>
+            <p>
+              Enter your email to subcribe newsletter
+            </p>
+            <form>
+              <div class="input-append">
+                <input class="span2" id="appendedInputButton" type="text">
+                <button class="btn btn-color" type="submit">Subscribe</button>
+              </div>
+            </form>
+            <ul class="social-network">
+              <li><a href="#"><i class="icon-bg-light icon-facebook icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Twitter"><i class="icon-bg-light icon-twitter icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Linkedin"><i class="icon-bg-light icon-linkedin icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Pinterest"><i class="icon-bg-light icon-pinterest icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Google plus"><i class="icon-bg-light icon-google-plus icon-circled icon-1x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+              &copy; Plato - All right reserved
+            </p>
+          </div>
+          <div class="span6">
+            <div class="pull-right">
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Plato
+                -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/modernizr.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.easing.1.3.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/google-code-prettify/prettify.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/bootstrap.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.prettyPhoto.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/portfolio/jquery.quicksand.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/portfolio/setting.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/hover/jquery-hover-effect.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.flexslider.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/classie.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/cbpAnimatedHeader.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/animate.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.refineslide.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.ui.totop.js')}}"></script>
+
+  <!-- Template Custom Javascript File -->
+  <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+
+</body>
+
+</html>

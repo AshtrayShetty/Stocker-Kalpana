@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stocker - Your Personal Stock Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An efficient stock predicting algorithm">
+  <meta name="author" content="Mihir Lakhani, Ashray, Nidhi Raniyer">
+  <!-- styles -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/css/bootstrap.css')}}">
+  <!--link href="assets/css/bootstrap.css" rel="stylesheet"-->
+  <link href="{{url_for('static',filename='assets/css/bootstrap-responsive.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/docs.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/prettyPhoto.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/js/google-code-prettify/prettify.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/flexslider.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/refineslide.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/font-awesome.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/animate.css')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/color/default.css')}}" rel="stylesheet">
+
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="{{url_for('static',filename='assets/ico/icon1.png')}}">
+ <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+ -->
+
+</head>
+
+<body>
+  <header>
+    <!-- Navbar
+    ================================================== -->
+    <div class="cbp-af-header">
+      <div class=" cbp-af-inner">
+        <div class="container">
+          <div class="row">
+
+            <div class="span4">
+              <!-- logo -->
+              <div class="logo">
+                <img src="{{url_for('static',filename='assets/ico/icon1.png')}}" alt="tocker icon" />
+                <h1><a href="{{url_for('home')}}">Stocker</a></h1>
+              </div>
+              <!-- end logo -->
+            </div>
+
+            <div class="span8">
+              <!-- top menu -->
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <nav>
+                    <ul class="nav topnav">
+                      <li class="dropdown active">
+                        <a href="{{url_for('home')}}">Home</a>
+                      </li>
+                      <li>
+                        <a href="{{url_for('form')}}">Stonks</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <!-- end menu -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="intro">
+
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+          <h2><strong>Your Personal <span class="highlight primary">Stock Analyst</span></strong></h2>
+          <p class="lead" id="about">
+            The Stockers are here to redefine stock analysis and get rid of the myths around it. With the help of advanced technology, we have invented an extensive algorithm leading to accurate analysis and stock predictions, so you can make smart investments.
+          </p>
+          <ul class="list list-ok strong bigger">
+            <li>Analysis of 5000+ companies over 10+ years</li>
+            <li>Updated with dataset until current year</li>
+            <li>Machine learning and deep learning algoritm used</li>
+          </ul>
+
+        </div>
+        <div class="span6">
+
+          <div class="group section-wrap upper" id="upper">
+            <div class="section-2 group">
+              <ul id="images" class="rs-slider">
+                <li class="group">
+                  <a href="#">
+				            <img src="{{url_for('static',filename='assets/img/slides/refine/img1.jpg')}}" alt="" />
+				        </a>
+                </li>
+                <li class="group">
+                  <a href="#" class="slide-parent">
+				            <img src="{{url_for('static',filename='assets/img/slides/refine/img2.jpg')}}" alt=""/>
+				        </a>
+                </li>
+                <li class="group">
+                  <img src="{{url_for('static',filename='assets/img/slides/refine/img3.jpg')}}" alt="" />
+                </li>
+              </ul>
+            </div>
+            <!-- /.section-2 -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="maincontent">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="features">
+            <div class="icon">
+              <i><img src="{{url_for('static',filename='assets/ico/info.png')}}" alt="information"/></i>
+              <!--<i class="icon-bg-light icon-circled icon-code icon-5x active"></i>-->
+            </div>
+            <div class="features_content">
+              <h3>Geniuine Dataset</h3>
+              <p class="left">
+                Picking one out of the inumerable datasets found online, we have cleaned, preprocessed and worked on our algorithm to perfect the predictions.
+              </p>
+              <a href="#" class="btn btn-color btn-rounded"><i class="icon-angle-right"></i> Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="features">
+            <div class="icon">
+              <i><img src="{{url_for('static',filename='assets/ico/build.png')}}" alt="Companies"/></i>
+              <!--<i class="icon-bg-dark icon-circled icon-bug icon-5x"></i>-->
+            </div>
+            <div class="features_content">
+              <h3>Top 30 Company Analysis</h3>
+              <p class="left">
+                Our dataset analysis involves the top 30 companies including those from New York Stock Exchange and NASDAQ Stock Exchange.
+                </p>
+              <a href="#" class="btn btn-color btn-rounded"><i class="icon-angle-right"></i> Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="features">
+            <div class="icon">
+              <i><img src="{{url_for('static',filename='assets/ico/user.png')}}" alt="User friendly"/></i>
+              <!--<i class="icon-bg-dark icon-circled icon-android icon-5x"></i>-->
+            </div>
+            <div class="features_content">
+              <h3>User Friendly</h3>
+              <p class="left">
+                Our product is focused on being user freindly and easy to use for all our customers. Our website makes our complicated backend and makes everything look easy.
+              </p>
+              <a href="#" class="btn btn-color btn-rounded"><i class="icon-angle-right"></i> Read more</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- blank divider -->
+      <div class="row">
+        <div class="span12">
+          <div class="blank10"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+          <div class="cta-box">
+            <div class="cta-text">
+              <h2>Your first step towards smart investment.</h2>
+            </div>
+            <div class="cta">
+              <a class="btn btn-large btn-rounded btn-color" href="{{url_for('form')}}">
+					<i class="icon-chevron-right"></i> Let's get Started!</a>
+            </div>
+          </div>
+          <!-- end tagline -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span6">
+          <h4>What the rich say</h4>
+          <div class="testmonial_slider">
+            <ul class="slides">
+              <li>
+                <div class="testimonial_item">
+                  <p>
+                      Wide diversification is only required when investors do not understand what they are doing.
+                  </p>
+                  <span class="author">Warren Buffet</span>
+                  <span class="occupation">American Business Magnate</span>
+                  <!-- end testmonial -->
+                </div>
+              </li>
+              <li>
+                <div class="testimonial_item">
+                  <p>
+                      The trick is not to learn to trust your gut feelings, but rather to discipline yourself to ignore them. Stand by your stocks as long as the fundamental story of the company hasn’t changed.
+                  </p>
+                  <span class="author">Peter Lynch</span>
+                  <span class="occupation">One Up On Wall Street</span>
+                  <!-- end testmonial -->
+                </div>
+              </li>
+              <li>
+                <div class="testimonial_item">
+                  <p>
+                      Don't blindly follow someone, follow market and try to hear what it is telling you.
+                  </p>
+                  <span class="author"> Jaymin Shah </span>
+                  <span class="occupation">Tech Entreprenuer</span>
+                  <!-- end testmonial -->
+                </div>
+              </li>
+            </ul>
+            <!-- end testmonial slider -->
+          </div>
+          <div class="blank"></div>
+
+        <h4>Special Thanks: </h4>
+          <ul class="clients">
+            <li>
+              <a href="#">
+									<img src="{{url_for('static',filename='assets/img/dummies/clients/logo3.png')}}" class="client-logo" alt="" />
+								</a>
+            </li>
+            <li>
+              <a href="#">
+									<img src="{{url_for('static',filename='assets/img/dummies/clients/logo1.png')}}" class="client-logo" alt="" />
+								</a>
+            </li>
+            <li>
+              <a href="#">
+									<img src="{{url_for('static',filename='assets/img/dummies/clients/logo2.png')}}" class="client-logo" alt="" />
+								</a>
+            </li>
+
+          </ul>
+        </div>
+      
+        <div class="span6">
+          <h4>Meet the Team</h4>
+          <!-- start: Accordion -->
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+								<i class="icon-caret-down"></i> Mihir Rajesh Lakhani </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                  He has done the prediction part of this page and has also done multiple courses on machine learning and deep learning and is currently making projects on those respective fields. He has made a movie recommendation software , prediction of a car purchase and now this is his next project in which the stock price is being predicted.He has great leadership skills and pushes his teammates to their maximum potential.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+								<i class="icon-caret-right"></i> Ashray Shetty </a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  He is responsible for creating the server and hosting the web pages to it. Using flask framework in Python, he managed to host this web application. He has prior knowledge of coding in Python. He has created another such blogging web aplication (using Django, another framework in Python). He has taken part in multiple hackathons: inGenius hackathon conducted at PES University and NEC transport hackathon conducted in Delhi; to name a few.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+								<i class="icon-caret-right"></i> Nidhi Raniyer </a>
+              </div>
+              <div id="collapseThree" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  She has done the designing part or the front end of this page. She has also done multiple courses on HTML, JavaScript and machine learning. She loves taking part in as many workshops or competitions she can. She is also good at coding in multiple languages like C, JAVA, C++, Python; to name a few. 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end: Accordion -->
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+  <!-- Footer
+ ================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="widget">
+            <!-- logo -->
+            <div class="footerlogo">
+              <h6><a href="index.html">Stocker</a></h6>
+              <!-- <img src="assets/img/logo.png" alt="" /> -->
+            </div>
+            <!-- end logo -->
+            <address>
+				<strong>Stocker: Your Personal Stock Analyst</strong><br>
+				 Developed and maintained by:<br>
+         Nidhi Raniyer, Ashray Shetty, Mihir Lakhani<br>
+         PES University, EC<br>
+				<!--<abbr title="Phone">P:</abbr> (123) 456-7890 </address>-->
+          </div>
+        </div>
+        <div class="span3">
+          <div class="widget">
+            <h5>Browse pages</h5>
+            <ul class="list list-ok">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="{{url_for('form')}}">Getting Started</a></li>
+              <li><a href="#accordion2">Our Team</a></li>
+              <!--<li><a href="#">Citation</a></li>-->
+            </ul>
+          </div>
+        </div>
+        <!--<div class="span3">
+          <div class="widget">
+            <h5>Flickr photostream</h5>
+            <div class="flickr_badge">
+              <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>-->
+        <div class="span3">
+          <div class="widget">
+            <h5>Keep updated</h5>
+            <p>
+              Enter your email to subcribe newsletter
+            </p>
+            <form>
+              <div class="input-append">
+                <input class="span2" id="appendedInputButton" type="text">
+                <button class="btn btn-color" type="submit">Subscribe</button>
+              </div>
+            </form>
+            <!--<ul class="social-network">
+              <li><a href="#"><i class="icon-bg-light icon-facebook icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Twitter"><i class="icon-bg-light icon-twitter icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Linkedin"><i class="icon-bg-light icon-linkedin icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Pinterest"><i class="icon-bg-light icon-pinterest icon-circled icon-1x"></i></a></li>
+              <li><a href="#" title="Google plus"><i class="icon-bg-light icon-google-plus icon-circled icon-1x"></i></a></li>
+            </ul>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <p>
+              &copy; Plato - All right reserved
+            </p>
+          </div>
+          <div class="span6">
+            <div class="pull-right">
+              <div class="credits">
+                
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Plato
+                
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </footer>
+
+  <script src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/modernizr.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.easing.1.3.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/google-code-prettify/prettify.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/bootstrap.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.prettyPhoto.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/portfolio/jquery.quicksand.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/portfolio/setting.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/hover/jquery-hover-effect.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.flexslider.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/classie.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/cbpAnimatedHeader.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.refineslide.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/jquery.ui.totop.js')}}"></script>
+
+  <!-- Template Custom Javascript File -->
+  <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+
+</body>
+
+</html>
