@@ -4,6 +4,7 @@ from prophet import pred
 app=Flask(__name__)
 
 #Home Page
+@app.route('/')
 @app.route('/stock')
 def home():
     return render_template('home.html')
